@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoginSecretary));
             this.BtnLogin = new System.Windows.Forms.Button();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.MskNationalId = new System.Windows.Forms.MaskedTextBox();
@@ -47,6 +48,7 @@
             this.BtnLogin.TabIndex = 13;
             this.BtnLogin.Text = "GİRİŞ YAP";
             this.BtnLogin.UseVisualStyleBackColor = false;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // TxtPassword
             // 
@@ -54,6 +56,7 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(117, 29);
             this.TxtPassword.TabIndex = 11;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // MskNationalId
             // 
@@ -96,8 +99,10 @@
             // 
             // FrmLoginSecretary
             // 
+            this.AcceptButton = this.BtnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(429, 197);
             this.Controls.Add(this.BtnLogin);
@@ -108,10 +113,12 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.Color.Beige;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "FrmLoginSecretary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLoginSecretary";
+            this.Text = "SEKRETER GİRİŞİ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

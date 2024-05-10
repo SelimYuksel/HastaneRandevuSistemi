@@ -112,11 +112,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Beige;
-            this.label4.Font = new System.Drawing.Font("Noto Sans", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(128, 28);
+            this.label4.Location = new System.Drawing.Point(122, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(255, 39);
+            this.label4.Size = new System.Drawing.Size(269, 31);
             this.label4.TabIndex = 7;
             this.label4.Text = "UMUT HASTANESİ";
             // 

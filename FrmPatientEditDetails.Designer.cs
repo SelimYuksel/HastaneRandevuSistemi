@@ -193,7 +193,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "FrmPatientEditDetails";
-            this.Text = "Bilgi Güncelleme ";
+            this.Text = "BİLGİ GÜNCELLEME";
             this.Load += new System.EventHandler(this.FrmPatientEditDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

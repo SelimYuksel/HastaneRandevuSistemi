@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.LnkEditDetails = new System.Windows.Forms.LinkLabel();
             this.BtnGetAppointment = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -132,6 +132,24 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "RANDEVU AL";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(149, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 29);
+            this.textBox1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.Beige;
+            this.label2.Location = new System.Drawing.Point(112, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 24);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "id:";
             // 
             // LnkEditDetails
             // 
@@ -259,24 +277,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(703, 230);
             this.dataGridView2.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.Beige;
-            this.label2.Location = new System.Drawing.Point(112, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 24);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "id:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(149, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 29);
-            this.textBox1.TabIndex = 9;
-            // 
             // FrmPatientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -291,7 +291,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmPatientDetails";
-            this.Text = "Hasta Detay";
+            this.Text = "HASTA DETAY";
             this.Load += new System.EventHandler(this.FrmPatientDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

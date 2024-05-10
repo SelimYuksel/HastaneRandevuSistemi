@@ -135,7 +135,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmLoginPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HASTA GİRİŞ";
+            this.Text = "HASTA GİRİŞİ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
