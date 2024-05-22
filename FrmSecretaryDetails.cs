@@ -82,5 +82,20 @@ namespace HastaneYonetim
             }
             connection.sqlConnection().Close();
         }
+
+        private void BtnCreateNotice_Click(object sender, EventArgs e)
+        {
+            SqlCommand sqlCommand = new SqlCommand("INSERT INTO TBLDUYURULAR (Duyuru) VALUES (@p1)", connection.sqlConnection());
+            sqlCommand.Parameters.AddWithValue("@p1", RchNotice.Text);
+            sqlCommand.ExecuteNonQuery();
+            connection.sqlConnection().Close();
+            MessageBox.Show("Duyuru oluşturuldu.");
+        }
+
+        private void BtnDocPanel_Click(object sender, EventArgs e)
+        {
+            FrmDoctorPanel frmDoctorPanel = new FrmDoctorPanel();
+            frmDoctorPanel.Show();
+        }
     }
 }

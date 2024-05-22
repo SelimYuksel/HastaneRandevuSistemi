@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CmbPoliclinic = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,7 @@
             this.TxtName.Location = new System.Drawing.Point(182, 37);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(149, 29);
-            this.TxtName.TabIndex = 9;
+            this.TxtName.TabIndex = 1;
             this.TxtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
@@ -71,7 +72,7 @@
             this.CmbPoliclinic.Location = new System.Drawing.Point(182, 128);
             this.CmbPoliclinic.Name = "CmbPoliclinic";
             this.CmbPoliclinic.Size = new System.Drawing.Size(149, 32);
-            this.CmbPoliclinic.TabIndex = 11;
+            this.CmbPoliclinic.TabIndex = 3;
             // 
             // MskNationalId
             // 
@@ -79,7 +80,7 @@
             this.MskNationalId.Mask = "00000000000";
             this.MskNationalId.Name = "MskNationalId";
             this.MskNationalId.Size = new System.Drawing.Size(149, 29);
-            this.MskNationalId.TabIndex = 12;
+            this.MskNationalId.TabIndex = 4;
             this.MskNationalId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MskNationalId.ValidatingType = typeof(int);
             // 
@@ -128,7 +129,7 @@
             this.TxtLastName.Location = new System.Drawing.Point(182, 83);
             this.TxtLastName.Name = "TxtLastName";
             this.TxtLastName.Size = new System.Drawing.Size(149, 29);
-            this.TxtLastName.TabIndex = 17;
+            this.TxtLastName.TabIndex = 2;
             this.TxtLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TxtPassword
@@ -136,7 +137,7 @@
             this.TxtPassword.Location = new System.Drawing.Point(182, 221);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(149, 29);
-            this.TxtPassword.TabIndex = 18;
+            this.TxtPassword.TabIndex = 5;
             this.TxtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnAdd
@@ -149,6 +150,7 @@
             this.BtnAdd.TabIndex = 19;
             this.BtnAdd.Text = "EKLE";
             this.BtnAdd.UseVisualStyleBackColor = false;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnDelete
             // 
@@ -167,19 +169,29 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Beige;
             this.groupBox1.Location = new System.Drawing.Point(351, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(529, 317);
+            this.groupBox1.Size = new System.Drawing.Size(717, 317);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DOKTOR LİSTESİ";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(523, 289);
+            this.dataGridView1.Size = new System.Drawing.Size(711, 289);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // BtnUpdate
             // 
@@ -197,7 +209,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(901, 345);
+            this.ClientSize = new System.Drawing.Size(1075, 335);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnDelete);
@@ -217,6 +229,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmDoctorPanel";
             this.Text = "DOKTOR PANEL";
+            this.Load += new System.EventHandler(this.FrmDoctorPanel_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
