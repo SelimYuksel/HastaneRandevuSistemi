@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoctorPanel));
             this.TxtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CmbPoliclinic = new System.Windows.Forms.ComboBox();
@@ -54,7 +55,6 @@
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(149, 29);
             this.TxtName.TabIndex = 1;
-            this.TxtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -130,7 +130,6 @@
             this.TxtLastName.Name = "TxtLastName";
             this.TxtLastName.Size = new System.Drawing.Size(149, 29);
             this.TxtLastName.TabIndex = 2;
-            this.TxtLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TxtPassword
             // 
@@ -138,7 +137,6 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(149, 29);
             this.TxtPassword.TabIndex = 5;
-            this.TxtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnAdd
             // 
@@ -162,6 +160,7 @@
             this.BtnDelete.TabIndex = 20;
             this.BtnDelete.Text = "SİL";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // groupBox1
             // 
@@ -203,11 +202,13 @@
             this.BtnUpdate.TabIndex = 22;
             this.BtnUpdate.Text = "GÜNCELLE";
             this.BtnUpdate.UseVisualStyleBackColor = false;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // FrmDoctorPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1075, 335);
             this.Controls.Add(this.BtnUpdate);
@@ -226,9 +227,11 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.Color.Beige;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "FrmDoctorPanel";
-            this.Text = "DOKTOR PANEL";
+            this.Text = "DOKTOR PANELİ";
             this.Load += new System.EventHandler(this.FrmDoctorPanel_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -23,9 +23,18 @@ namespace HastaneYonetim
         private void FrmDoctorPanel_Load(object sender, EventArgs e)
         {
             DataTable dataTable1 = new DataTable();
-            SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("SELECT * FROM TBLDOKTORLAR", connection.sqlConnection());
+            SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("SELECT Doktorid as 'Id',DoktorAd as 'Ad',DoktorSoyad as 'Soyad',DoktorBrans as 'Branş', DoktorTC as 'TC No', DoktorSifre as 'Şifre' FROM TBLDOKTORLAR", connection.sqlConnection());
             sqlDataAdapter1.Fill(dataTable1);
             dataGridView1.DataSource = dataTable1;
+
+            //Comboboxa branş ekleme
+            SqlCommand command = new SqlCommand("SELECT BransAd FROM TBLBRANS", connection.sqlConnection());
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                CmbPoliclinic.Items.Add(reader[0]);
+            }
+            connection.sqlConnection().Close();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -41,7 +50,7 @@ namespace HastaneYonetim
             MessageBox.Show("Doktor eklendi", "Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Information);
 
         }
-
+        //Datagridviewda seçilen hücreleri ilgili kutucuklara aktarma
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int secilen = dataGridView1.SelectedCells[0].RowIndex;
@@ -50,6 +59,34 @@ namespace HastaneYonetim
             CmbPoliclinic.Text = dataGridView1.Rows[secilen].Cells[3].Value.ToString();
             MskNationalId.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
             TxtPassword.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand("DELETE FROM TBLDOKTORLAR WHERE DoktorTC=@p1", connection.sqlConnection());
+            command.Parameters.AddWithValue("@p1",MskNationalId.Text);
+            command.ExecuteNonQuery();
+            connection.sqlConnection().Close();
+            MessageBox.Show("Kayıt silindi","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand("UPDATE TBLDOKTORLAR SET DoktorAd=@p1,DoktorSoyad=@p2,DoktorBrans=@p3,DoktorSifre=@p5 where DoktorTC=@p4", connection.sqlConnection());
+            command.Parameters.AddWithValue("@p1", TxtName.Text);
+            command.Parameters.AddWithValue("@p2", TxtLastName.Text);
+            command.Parameters.AddWithValue("@p3", CmbPoliclinic.Text);
+            command.Parameters.AddWithValue("@p4", MskNationalId.Text);
+            command.Parameters.AddWithValue("@p5", TxtPassword.Text);
+            command.ExecuteNonQuery();
+            connection.sqlConnection().Close();
+            MessageBox.Show("Doktor güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            DataTable dataTable1 = new DataTable();
+            SqlDataAdapter sqlDataAdapter1 = new SqlDataAdapter("SELECT Doktorid as 'Id',DoktorAd as 'Ad',DoktorSoyad as 'Soyad',DoktorBrans as 'Branş', DoktorTC as 'TC No', DoktorSifre as 'Şifre' FROM TBLDOKTORLAR", connection.sqlConnection());
+            sqlDataAdapter1.Fill(dataTable1);
+            dataGridView1.DataSource = dataTable1;
         }
     }
 }
