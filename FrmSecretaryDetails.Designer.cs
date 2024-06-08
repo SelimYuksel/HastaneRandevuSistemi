@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSecretaryDetails));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LblName = new System.Windows.Forms.Label();
@@ -40,7 +38,6 @@
             this.BtnCreateNotice = new System.Windows.Forms.Button();
             this.RchNotice = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.BtnUpdateAppointment = new System.Windows.Forms.Button();
             this.BtnAddAppointment = new System.Windows.Forms.Button();
             this.ChkAvailable = new System.Windows.Forms.CheckBox();
             this.MskPatientNationalId = new System.Windows.Forms.MaskedTextBox();
@@ -63,6 +60,7 @@
             this.BtnGetAppoList = new System.Windows.Forms.Button();
             this.BtnPoliclinicPanel = new System.Windows.Forms.Button();
             this.BtnDocPanel = new System.Windows.Forms.Button();
+            this.BtnNotices = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -160,7 +158,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.BtnUpdateAppointment);
             this.groupBox3.Controls.Add(this.BtnAddAppointment);
             this.groupBox3.Controls.Add(this.ChkAvailable);
             this.groupBox3.Controls.Add(this.MskPatientNationalId);
@@ -183,24 +180,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "RANDEVU PANELİ";
             // 
-            // BtnUpdateAppointment
-            // 
-            this.BtnUpdateAppointment.BackColor = System.Drawing.Color.Beige;
-            this.BtnUpdateAppointment.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BtnUpdateAppointment.Location = new System.Drawing.Point(109, 388);
-            this.BtnUpdateAppointment.Name = "BtnUpdateAppointment";
-            this.BtnUpdateAppointment.Size = new System.Drawing.Size(183, 40);
-            this.BtnUpdateAppointment.TabIndex = 15;
-            this.BtnUpdateAppointment.Text = "GÜNCELLE";
-            this.BtnUpdateAppointment.UseVisualStyleBackColor = false;
-            // 
             // BtnAddAppointment
             // 
             this.BtnAddAppointment.BackColor = System.Drawing.Color.Beige;
             this.BtnAddAppointment.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BtnAddAppointment.Location = new System.Drawing.Point(109, 342);
+            this.BtnAddAppointment.Location = new System.Drawing.Point(143, 377);
             this.BtnAddAppointment.Name = "BtnAddAppointment";
-            this.BtnAddAppointment.Size = new System.Drawing.Size(183, 40);
+            this.BtnAddAppointment.Size = new System.Drawing.Size(149, 40);
             this.BtnAddAppointment.TabIndex = 14;
             this.BtnAddAppointment.Text = "KAYDET";
             this.BtnAddAppointment.UseVisualStyleBackColor = false;
@@ -209,7 +195,7 @@
             // ChkAvailable
             // 
             this.ChkAvailable.AutoSize = true;
-            this.ChkAvailable.Location = new System.Drawing.Point(143, 308);
+            this.ChkAvailable.Location = new System.Drawing.Point(143, 309);
             this.ChkAvailable.Name = "ChkAvailable";
             this.ChkAvailable.Size = new System.Drawing.Size(97, 28);
             this.ChkAvailable.TabIndex = 13;
@@ -334,7 +320,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.ForeColor = System.Drawing.Color.Beige;
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(695, 13);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(420, 221);
@@ -346,14 +332,6 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
@@ -363,7 +341,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dataGridView2);
-            this.groupBox5.ForeColor = System.Drawing.Color.Beige;
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
             this.groupBox5.Location = new System.Drawing.Point(696, 233);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(420, 333);
@@ -376,14 +354,6 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 25);
             this.dataGridView2.Name = "dataGridView2";
@@ -392,6 +362,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.BtnNotices);
             this.groupBox6.Controls.Add(this.BtnGetAppoList);
             this.groupBox6.Controls.Add(this.BtnPoliclinicPanel);
             this.groupBox6.Controls.Add(this.BtnDocPanel);
@@ -407,35 +378,49 @@
             // 
             this.BtnGetAppoList.BackColor = System.Drawing.Color.Beige;
             this.BtnGetAppoList.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BtnGetAppoList.Location = new System.Drawing.Point(245, 40);
+            this.BtnGetAppoList.Location = new System.Drawing.Point(126, 15);
             this.BtnGetAppoList.Name = "BtnGetAppoList";
-            this.BtnGetAppoList.Size = new System.Drawing.Size(198, 40);
+            this.BtnGetAppoList.Size = new System.Drawing.Size(185, 40);
             this.BtnGetAppoList.TabIndex = 17;
             this.BtnGetAppoList.Text = "RANDEVU LİSTESİ";
             this.BtnGetAppoList.UseVisualStyleBackColor = false;
+            this.BtnGetAppoList.Click += new System.EventHandler(this.BtnGetAppoList_Click);
             // 
             // BtnPoliclinicPanel
             // 
             this.BtnPoliclinicPanel.BackColor = System.Drawing.Color.Beige;
             this.BtnPoliclinicPanel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BtnPoliclinicPanel.Location = new System.Drawing.Point(449, 40);
+            this.BtnPoliclinicPanel.Location = new System.Drawing.Point(388, 15);
             this.BtnPoliclinicPanel.Name = "BtnPoliclinicPanel";
-            this.BtnPoliclinicPanel.Size = new System.Drawing.Size(216, 40);
+            this.BtnPoliclinicPanel.Size = new System.Drawing.Size(194, 40);
             this.BtnPoliclinicPanel.TabIndex = 16;
             this.BtnPoliclinicPanel.Text = "POLİKLİNİK PANELİ";
             this.BtnPoliclinicPanel.UseVisualStyleBackColor = false;
+            this.BtnPoliclinicPanel.Click += new System.EventHandler(this.BtnPoliclinicPanel_Click);
             // 
             // BtnDocPanel
             // 
             this.BtnDocPanel.BackColor = System.Drawing.Color.Beige;
             this.BtnDocPanel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BtnDocPanel.Location = new System.Drawing.Point(16, 40);
+            this.BtnDocPanel.Location = new System.Drawing.Point(126, 61);
             this.BtnDocPanel.Name = "BtnDocPanel";
-            this.BtnDocPanel.Size = new System.Drawing.Size(223, 40);
+            this.BtnDocPanel.Size = new System.Drawing.Size(185, 40);
             this.BtnDocPanel.TabIndex = 15;
             this.BtnDocPanel.Text = "DOKTOR PANELİ";
             this.BtnDocPanel.UseVisualStyleBackColor = false;
             this.BtnDocPanel.Click += new System.EventHandler(this.BtnDocPanel_Click);
+            // 
+            // BtnNotices
+            // 
+            this.BtnNotices.BackColor = System.Drawing.Color.Beige;
+            this.BtnNotices.ForeColor = System.Drawing.Color.SteelBlue;
+            this.BtnNotices.Location = new System.Drawing.Point(388, 61);
+            this.BtnNotices.Name = "BtnNotices";
+            this.BtnNotices.Size = new System.Drawing.Size(194, 40);
+            this.BtnNotices.TabIndex = 18;
+            this.BtnNotices.Text = "DUYURULAR";
+            this.BtnNotices.UseVisualStyleBackColor = false;
+            this.BtnNotices.Click += new System.EventHandler(this.BtnNotices_Click);
             // 
             // FrmSecretaryDetails
             // 
@@ -454,6 +439,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmSecretaryDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SEKRETER DETAY";
             this.Load += new System.EventHandler(this.FrmSecretaryDetails_Load);
             this.groupBox1.ResumeLayout(false);
@@ -495,7 +481,6 @@
         private System.Windows.Forms.MaskedTextBox MskTime;
         private System.Windows.Forms.MaskedTextBox MskDate;
         private System.Windows.Forms.Button BtnAddAppointment;
-        private System.Windows.Forms.Button BtnUpdateAppointment;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -504,5 +489,6 @@
         private System.Windows.Forms.Button BtnGetAppoList;
         private System.Windows.Forms.Button BtnPoliclinicPanel;
         private System.Windows.Forms.Button BtnDocPanel;
+        private System.Windows.Forms.Button BtnNotices;
     }
 }
