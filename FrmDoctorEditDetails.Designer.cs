@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoctorEditDetails));
             this.BtnEditDetails = new System.Windows.Forms.Button();
             this.TxtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.BtnEditDetails.TabIndex = 43;
             this.BtnEditDetails.Text = "GÜNCELLE";
             this.BtnEditDetails.UseVisualStyleBackColor = false;
+            this.BtnEditDetails.Click += new System.EventHandler(this.BtnEditDetails_Click);
             // 
             // TxtLastName
             // 
@@ -150,6 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(370, 347);
             this.Controls.Add(this.CmbBranch);
@@ -164,9 +167,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "FrmDoctorEditDetails";
-            this.Text = "FrmDoctorEditDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DOKTOR DETAY DÜZENLEME";
+            this.Load += new System.EventHandler(this.FrmDoctorEditDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

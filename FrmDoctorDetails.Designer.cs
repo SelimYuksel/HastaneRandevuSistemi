@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoctorDetails));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LblName = new System.Windows.Forms.Label();
             this.LblNationalId = new System.Windows.Forms.Label();
@@ -123,7 +124,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.ForeColor = System.Drawing.Color.Beige;
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(375, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(717, 507);
@@ -133,12 +134,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(711, 479);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox4
             // 
@@ -163,6 +166,7 @@
             this.BtnExit.TabIndex = 2;
             this.BtnExit.Text = "ÇIKIŞ";
             this.BtnExit.UseVisualStyleBackColor = false;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // BtnNotice
             // 
@@ -174,6 +178,7 @@
             this.BtnNotice.TabIndex = 1;
             this.BtnNotice.Text = "DUYURULAR";
             this.BtnNotice.UseVisualStyleBackColor = false;
+            this.BtnNotice.Click += new System.EventHandler(this.BtnNotice_Click);
             // 
             // BtnEditDetails
             // 
@@ -185,11 +190,13 @@
             this.BtnEditDetails.TabIndex = 0;
             this.BtnEditDetails.Text = "BİLGİ DÜZENLE";
             this.BtnEditDetails.UseVisualStyleBackColor = false;
+            this.BtnEditDetails.Click += new System.EventHandler(this.BtnEditDetails_Click);
             // 
             // FrmDoctorDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1104, 528);
             this.Controls.Add(this.groupBox4);
@@ -197,9 +204,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "FrmDoctorDetails";
-            this.Text = "FrmDoctorDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DOKTOR DETAY";
+            this.Load += new System.EventHandler(this.FrmDoctorDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

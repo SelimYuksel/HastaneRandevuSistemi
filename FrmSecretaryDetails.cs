@@ -59,21 +59,11 @@ namespace HastaneYonetim
 
         private void BtnAddAppointment_Click(object sender, EventArgs e)  //Randevu ekleme
         {
-            SqlCommand command = new SqlCommand("INSERT INTO TBLRANDEVULAR (RandevuTarih, RandevuSaat, RandevuBrans, RandevuDoktor, HastaTC, RandevuDurum) values (@p1,@p2,@p3,@p4,@p5,@p6)", connection.sqlConnection());
+            SqlCommand command = new SqlCommand("INSERT INTO TBLRANDEVULAR (RandevuTarih, RandevuSaat, RandevuBrans, RandevuDoktor) values (@p1,@p2,@p3,@p4)", connection.sqlConnection());
             command.Parameters.AddWithValue("@p1", MskDate.Text);
             command.Parameters.AddWithValue("@p2", MskTime.Text);
             command.Parameters.AddWithValue("@p3", CmbPoliclinic.Text);
             command.Parameters.AddWithValue("@p4", CmbDoctor.Text);
-            command.Parameters.AddWithValue("@p5", MskPatientNationalId.Text);
-            if (ChkAvailable.Checked)
-            {
-                ChkAvailable.Text = "True";
-            }
-            else
-            {
-                ChkAvailable.Text = "False";
-            }
-            command.Parameters.AddWithValue("@p6", ChkAvailable.Text);
             command.ExecuteNonQuery();
             connection.sqlConnection().Close();
             MessageBox.Show("Randevu oluşturuldu");

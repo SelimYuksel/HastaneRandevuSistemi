@@ -81,10 +81,11 @@ namespace HastaneYonetim
         private void CmbDoctor_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT RandevuTarih, RandevuSaat, RandevuBrans, RandevuDoktor, RandevuDurum, HastaTC FROM TBLRANDEVULAR WHERE RandevuBrans='" + CmbPoliclinic.Text+"'",connection.sqlConnection());
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT Randevuid, RandevuTarih, RandevuSaat, RandevuBrans, RandevuDoktor, RandevuDurum, HastaTC FROM TBLRANDEVULAR WHERE RandevuBrans='" + CmbPoliclinic.Text+"'" + " AND RandevuDoktor='" + CmbDoctor.Text + "'" + " AND RandevuDurum=0 ",connection.sqlConnection());
             sqlDataAdapter.Fill(dataTable);
             dataGridView2.DataSource = dataTable;
 
+            dataGridView2.Columns["Randevuid"].HeaderText = "Randevu No.";
             dataGridView2.Columns["RandevuTarih"].HeaderText = "Tarih";
             dataGridView2.Columns["RandevuSaat"].HeaderText = "Saat";
             dataGridView2.Columns["RandevuBrans"].HeaderText = "Poliklinik";
@@ -99,6 +100,24 @@ namespace HastaneYonetim
             FrmPatientEditDetails frmPatientEditDetails = new FrmPatientEditDetails();
             frmPatientEditDetails.nationalId = LblNationalId.Text;
             frmPatientEditDetails.Show();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = dataGridView2.SelectedCells[0].RowIndex;
+            textBox1.Text = dataGridView2.Rows[secilen].Cells[0].Value.ToString();
+        }
+
+        private void BtnGetAppointment_Click(object sender, EventArgs e)
+        {
+            SqlCommand sqlCommand = new SqlCommand("UPDATE TBLRANDEVULAR SET RandevuDurum=1, HastaTC=@p1, HastaSikayet=@p2 WHERE Randevuid=@p3", connection.sqlConnection());
+            sqlCommand.Parameters.AddWithValue("@p1", LblNationalId.Text);
+            sqlCommand.Parameters.AddWithValue("@p2", RchComplaint.Text);
+            sqlCommand.Parameters.AddWithValue("@p3", textBox1.Text);
+            sqlCommand.ExecuteNonQuery();
+            connection.sqlConnection().Close();
+            MessageBox.Show("Randevunuz alındı!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
     }
 }
